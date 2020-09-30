@@ -12,14 +12,21 @@ public class MoodAnalyser {
 	/**
 	 * @param args
 	 */
-	public String analyseMood(String message) {
-		if(message.contains("sad"))
-			return "SAD";
-		else 
-			return "HAPPY";
+	private String message;
+
+	public MoodAnalyser() {
+
 	}
-	public static void main(String[] args) {
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
-		System.out.println(moodAnalyser.analyseMood("I am happy"));
+
+	public MoodAnalyser(String message) {
+		this.message = message;
+	}
+
+	public String analyseMood() {
+		message = message.toLowerCase();
+		if (message.contains("sad"))
+			return "SAD";
+		else
+			return "HAPPY";
 	}
 }
